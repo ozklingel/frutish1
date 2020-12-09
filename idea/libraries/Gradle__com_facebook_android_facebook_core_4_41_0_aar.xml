@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.android:facebook-core:4.41.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/facebook-core-4.41.0.aar/ef708e291a3b68571f354b03ff255cdb/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/facebook-core-4.41.0.aar/ef708e291a3b68571f354b03ff255cdb/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/facebook-core-4.41.0.aar/ef708e291a3b68571f354b03ff255cdb/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/facebook-core-4.41.0.aar/ef708e291a3b68571f354b03ff255cdb/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/74e1626c153d218f22fb457f2e094704/facebook-core-4.41.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/74e1626c153d218f22fb457f2e094704/facebook-core-4.41.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/74e1626c153d218f22fb457f2e094704/facebook-core-4.41.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-core/4.41.0/2859c1bec5a85043e7d1b295e42e29027ef7a29b/facebook-core-4.41.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-core/4.41.0/2859c1bec5a85043e7d1b295e42e29027ef7a29b/facebook-core-4.41.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-core/4.41.0/e982f858a3bf8a8d510706afee1f4885cd7a9877/facebook-core-4.41.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-core/4.41.0/e982f858a3bf8a8d510706afee1f4885cd7a9877/facebook-core-4.41.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

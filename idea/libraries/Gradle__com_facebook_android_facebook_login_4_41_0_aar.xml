@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="Gradle: com.facebook.android:facebook-login:4.41.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/facebook-login-4.41.0.aar/dd31abe2b2b56b6708677ec2e4029d90/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/facebook-login-4.41.0.aar/dd31abe2b2b56b6708677ec2e4029d90/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/facebook-login-4.41.0.aar/dd31abe2b2b56b6708677ec2e4029d90/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1318eccc029e3d4d10822b46cabaa31c/facebook-login-4.41.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1318eccc029e3d4d10822b46cabaa31c/facebook-login-4.41.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1318eccc029e3d4d10822b46cabaa31c/facebook-login-4.41.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-login/4.41.0/fbb28b8f18f4642b575dbee2f5708323a2c2caf0/facebook-login-4.41.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-login/4.41.0/fbb28b8f18f4642b575dbee2f5708323a2c2caf0/facebook-login-4.41.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-login/4.41.0/9f5c17ffdafd796ba330be4269a32c822470ada8/facebook-login-4.41.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-login/4.41.0/9f5c17ffdafd796ba330be4269a32c822470ada8/facebook-login-4.41.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

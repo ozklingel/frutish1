@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.support:customview:28.0.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/68d3ccee764a2a9e93930ecba87e7feb/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/68d3ccee764a2a9e93930ecba87e7feb/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/68d3ccee764a2a9e93930ecba87e7feb/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/68d3ccee764a2a9e93930ecba87e7feb/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/075c8808cc131a7368ee88fc0c2e783d/customview-28.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/075c8808cc131a7368ee88fc0c2e783d/customview-28.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/075c8808cc131a7368ee88fc0c2e783d/customview-28.0.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
