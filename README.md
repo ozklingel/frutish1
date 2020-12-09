@@ -1,4 +1,4 @@
-# Volunteers-App
+# frutish-App
 This repo contains our code for fruitish App.
 
 
