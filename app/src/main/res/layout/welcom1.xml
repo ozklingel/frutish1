@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+    android:weightSum="2"
+    android:orientation="vertical"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@mipmap/hosted_events_background">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="  חברה טובה מתחילה באנשים"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="50sp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text=" פה תוכל לשתף ולמצוא עץ שמחכה למישהו שיקטוף אותו"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/requestedEvents"
+        android:layout_width="297dp"
+        android:layout_height="237dp"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+</LinearLayout>
