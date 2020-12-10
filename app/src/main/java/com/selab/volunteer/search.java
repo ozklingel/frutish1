@@ -87,8 +87,10 @@ public class search extends AppCompatActivity {
                 tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        boolean bool = false;
                         for (DataSnapshot childsnap : dataSnapshot.getChildren()) {
                             if ((childsnap.child("type").getValue() + "").equals((type.getText() + "").trim())) {
+                                bool = true;
                                 text = childsnap.getKey();
                                 Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_LONG).show();
                                 TextView pname = (TextView)findViewById(R.id.tree);
@@ -97,7 +99,9 @@ public class search extends AppCompatActivity {
                                 break;
                             }
                         }
-                        Toast.makeText(getApplicationContext(), "unsuccessful", Toast.LENGTH_LONG).show();
+                        if(bool==false){
+                            Toast.makeText(getApplicationContext(), "unsuccessful", Toast.LENGTH_LONG).show();
+                        }
 
                     }
 
