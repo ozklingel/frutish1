@@ -1,10 +1,6 @@
 package com.selab.volunteer;
 
 
-import android.widget.ArrayAdapter;
-
-import java.util.ArrayList;
-
 public class EventOneSchema {
 
     public String type;
