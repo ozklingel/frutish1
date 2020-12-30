@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-android:layout_height="match_parent"
+    android:layout_height="match_parent"
 
     android:weightSum="2"
     android:orientation="vertical"
@@ -10,46 +10,70 @@ android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:background="@mipmap/hosted_events_background">
-
-    <TextView
-        android:id="@+id/textView1"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="  חברה טובה מתחילה באנשים"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="50sp" />
+        android:layout_weight="1"
+        android:background="@mipmap/hosted_events_background">
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp"
+            android:ems="10"
+            android:hint="lets do bisiuness"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:gravity="center"
+
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:layout_weight="1"
+        android:background="@mipmap/events_background">
+
+        <Button
+            android:id="@+id/submits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="submit as sailer"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:layout_marginTop="70sp"
+
+            />
+        <Button
+            android:id="@+id/submitb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="submit as buyer"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            android:textStyle="bold"
+
+            />
+    </RelativeLayout>
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text=" פה תוכל לשתף ולמצוא עץ שמחכה למישהו שיקטוף אותו"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="50sp" />
-
-    <Button
-        android:id="@+id/requestedEvents"
-        android:layout_width="297dp"
-        android:layout_height="237dp"
-        android:layout_centerInParent="true"
-        android:background="@android:color/transparent"
-        android:gravity="center"
         android:text=""
-        android:textColor="#FFFFFF"
-        android:textSize="45sp"
-        android:textStyle="bold" />
-
-</RelativeLayout>
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="30sp" />
 </LinearLayout>

@@ -20,40 +20,38 @@
         app:popupTheme="@style/AlertDialog.AppCompat.Light" />
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="184dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@mipmap/hosted_events_background">
-
         <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:text="                                ברוך הבא!"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
-
         <Button
             android:id="@+id/hostedEvents"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:text="שנה שם משתמש"
+            android:text="חפש עץ"
+            android:textStyle="bold"
             android:textColor="#000000"
-            android:textSize="45sp"
-            android:textStyle="bold" />
+            android:textSize="45sp" />
     </RelativeLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="282dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@mipmap/events_background">
 
@@ -61,35 +59,14 @@
             android:id="@+id/requestedEvents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:text="שנה אימייל"
-            android:textColor="@color/black"
-            android:textSize="45sp"
-            android:textStyle="bold"
-
-            />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="282dp"
-        android:layout_weight="1"
-        android:background="@mipmap/events_background">
-
-        <Button
-            android:id="@+id/changeoldpassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
             android:gravity="center"
-            android:text="שנה סיסמה"
-            android:textColor="@color/black"
-            android:textSize="45sp"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
+            android:background="@android:color/transparent"
+            android:text="ערוך פרופיל"
+            android:textSize="45sp"
 
             />
     </RelativeLayout>
