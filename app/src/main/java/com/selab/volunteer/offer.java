@@ -66,11 +66,10 @@ public class offer extends AppCompatActivity {
                         final EventOneSchema eventOneSchema = new EventOneSchema(eventl, eventt, eventp, eventph);
 
 
+                databaseEvents = FirebaseDatabase.getInstance().getReference().child("trees");
+                String eventId = databaseEvents.push().getKey();
 
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("tree");
-
-                myRef.setValue(eventOneSchema);
+                databaseEvents.child(eventId).setValue(eventOneSchema);
                 Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_LONG).show();
 
                 intent=new Intent(com.selab.volunteer.offer.this,HostFinal.class);

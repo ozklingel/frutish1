@@ -68,20 +68,16 @@ public class search extends AppCompatActivity {
                 eventp = Integer.parseInt(price.getText().toString().trim());
 
 //curently by type only
-                tempdata2 = FirebaseDatabase.getInstance().getReference().child("tree");
+                tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
                 tempdata2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for( DataSnapshot userId : dataSnapshot.getChildren())
+                        for( DataSnapshot tree : dataSnapshot.getChildren())
                         {
-                            Toast.makeText(search.this, userId.getValue().toString(), Toast.LENGTH_SHORT).show();
+                            String name = tree.child("type").getValue(String.class);
+                          if(name.equalsIgnoreCase(eventt))
+                            Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
 
-                            if(userId.getValue().toString().equals("fds"))
-                            {
-                                DatabaseReference reff = userId.getRef();
-                                reff.removeValue();
-
-                            }
                         }
                     }
 

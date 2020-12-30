@@ -7,12 +7,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivitybuyer extends AppCompatActivity {
     Button a,b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mainbuyer);
         a = findViewById(R.id.hostedEvents);
         b = findViewById(R.id.requestedEvents);
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, offer.class);
+                Intent intent = new Intent(MainActivitybuyer.this, search.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, acountsetting.class);
+                Intent intent = new Intent(MainActivitybuyer.this, acountsetting.class);
                 startActivity(intent);
             }
         });

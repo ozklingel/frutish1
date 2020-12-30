@@ -1,6 +1,7 @@
+
 package com.selab.volunteer;
 
-import android.app.ProgressDialog;
+        import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -8,7 +9,6 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Login extends AppCompatActivity {
+public class login_sailer extends AppCompatActivity {
 
     private int flag=0;
     private String email;
@@ -50,12 +50,12 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mprogress=new ProgressDialog(Login.this);
+        mprogress=new ProgressDialog(login_sailer.this);
         mprogress.setMessage("Validating Credentials!!!\nPlease Wait!!");
         flag=0;
 
 
-        Login.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        //login_sailer.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
 
 
@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        mGoogleSignInClient= GoogleSignIn.getClient(Login.this,gso);
+        mGoogleSignInClient= GoogleSignIn.getClient(login_sailer.this,gso);
 
 
 
@@ -117,7 +117,7 @@ public class Login extends AppCompatActivity {
                         setup();
                     }
                 } else {
-                    Toast.makeText(Login.this, "Check Internet Connectivity", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login_sailer.this, "Check Internet Connectivity", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -125,7 +125,7 @@ public class Login extends AppCompatActivity {
         forgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent=new Intent(com.selab.volunteer.Login.this,ForgotPassword.class);
+                intent=new Intent(com.selab.volunteer.login_sailer.this,ForgotPassword.class);
                 startActivity(intent);
             }
         });
@@ -133,7 +133,7 @@ public class Login extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent1=new Intent(com.selab.volunteer.Login.this, SignUp.class);
+                intent1=new Intent(com.selab.volunteer.login_sailer.this, SignUp.class);
                 startActivity(intent1);
             }
         });
@@ -147,7 +147,7 @@ public class Login extends AppCompatActivity {
 
     private void setup()
     {
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(com.selab.volunteer.Login.this, new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(com.selab.volunteer.login_sailer.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
@@ -155,14 +155,14 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Verify " + mAuth.getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
                         mprogress.dismiss();
                     } else {
-                        Intent intent = new Intent(Login.this, MainActivitybuyer.class);
+                        Intent intent = new Intent(login_sailer.this, MainActivity.class);
                         // Toast.makeText(Login.this, mAuth.getUid(), Toast.LENGTH_SHORT).show();
                         DatabaseReference reff = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("name");
 
                         reff.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                Toast.makeText(Login.this, "" + dataSnapshot.getValue(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(login_sailer.this, "" + dataSnapshot.getValue(), Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
