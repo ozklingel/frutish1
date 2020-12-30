@@ -68,7 +68,7 @@ public class offer extends AppCompatActivity {
 
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("message");
+                DatabaseReference myRef = database.getReference("tree");
 
                 myRef.setValue(eventOneSchema);
                 Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_LONG).show();

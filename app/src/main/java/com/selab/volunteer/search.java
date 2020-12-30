@@ -7,7 +7,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -69,32 +68,27 @@ public class search extends AppCompatActivity {
                 eventp = Integer.parseInt(price.getText().toString().trim());
 
 //curently by type only
-                tempdata2 = FirebaseDatabase.getInstance().getReference().child("Events/");
-                tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
+                tempdata2 = FirebaseDatabase.getInstance().getReference().child("tree");
+                tempdata2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot childsnap : dataSnapshot.getChildren()) {
-                            if ((childsnap.child("type").getValue() + "").equals((type.getText() + "").trim())) {
-                                text = childsnap.getKey();
-                                Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_LONG).show();
-                                TextView pname = (TextView)findViewById(R.id.tree);
-                                pname.setText(childsnap.child("type").getValue() + ","+childsnap.child("location").getValue());
+                        for( DataSnapshot userId : dataSnapshot.getChildren())
+                        {
+                            Toast.makeText(search.this, userId.getValue().toString(), Toast.LENGTH_SHORT).show();
 
-                                break;
+                            if(userId.getValue().toString().equals("fds"))
+                            {
+                                DatabaseReference reff = userId.getRef();
+                                reff.removeValue();
+
                             }
                         }
-                        Toast.makeText(getApplicationContext(), "unsuccessful", Toast.LENGTH_LONG).show();
-
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
-
-
-
-
                 });
             }});
 

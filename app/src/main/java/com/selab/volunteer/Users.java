@@ -4,6 +4,7 @@ public class Users {
     String mail;
     String phone;
     String name;
+    String role;
 
 
     public Users() {
@@ -34,6 +35,7 @@ public class Users {
     }
 
 
-
-
+    public void setRole(String buyer) {
+        this.role=buyer;
+    }
 }
