@@ -108,6 +108,18 @@
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".EventList1"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".login_sailer"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="DuplicateActivity" />
     </application>
 
 </manifest>
