@@ -7,7 +7,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +18,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class search extends AppCompatActivity {
 
 
@@ -30,7 +33,7 @@ public class search extends AppCompatActivity {
     EditText location;
     EditText type;
     EditText price;
-    int eventp;
+    String eventp;
     String eventl ;
     String eventt ;
     String text;
@@ -65,27 +68,50 @@ public class search extends AppCompatActivity {
             public void onClick(View v) {
                 eventl = location.getText().toString().trim();
                 eventt = type.getText().toString().trim();
-                eventp = Integer.parseInt(price.getText().toString().trim());
+                eventp = price.getText().toString().trim();
+                 String[] array1 = new  String[3];
+               // array1[0]=eventl;
+                //array1[1]=eventt;
+                //array1[2]=eventp;
 
-//curently by type only
-                tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+
+                DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
                 tempdata2.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        List<String> array1 = new ArrayList<String>();
+
+
                         for( DataSnapshot tree : dataSnapshot.getChildren())
                         {
-                            String name = tree.child("type").getValue(String.class);
-                          if(name.equalsIgnoreCase(eventt))
-                            Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
 
+                            if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt)&&tree.child("location").getValue(String.class).equalsIgnoreCase(eventl)) {
+                                //array1[0] = tree.child("type").getValue(String.class);
+                                //array1[1] = tree.child("location").getValue(String.class);
+                                //array1[2] = tree.child("location").getValue(String.class);
+                                //array1[0]= array1[0]+ array1[1]+ array1[2];
+                                array1.add("type:"+tree.child("type").getValue(String.class)+"/nlocation:"+tree.child("location").getValue(String.class)+"");
+
+                            }
                         }
+                        String[] stockArr = new String[array1.size()];
+                        Intent i = new Intent(search.this, EventList1.class);
+                        i.putExtra("key", array1.toArray(stockArr));
+                        startActivity(i);
                     }
 
                     @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    public void onCancelled(@NonNull DatabaseError error) {
 
                     }
+
+
+
+
                 });
+
+//curently by type only
+
             }});
 
 
