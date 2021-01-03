@@ -18,100 +18,100 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="308dp"
-        android:layout_weight="1"
-        android:background="@mipmap/hosted_events_background">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="308dp"
+                android:layout_weight="1"
+                android:background="@mipmap/hosted_events_background">
 
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50sp"
-            android:ems="10"
-            android:hint="username"
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50sp"
+                    android:ems="10"
+                    android:hint="username"
 
 
-            />
+                    />
 
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="110sp"
-            android:ems="10"
-            android:hint="typasswordpe"
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="110sp"
+                    android:ems="10"
+                    android:hint="typasswordpe"
 
-            />
+                    />
 
-    </RelativeLayout>
+            </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:layout_weight="1"
-        android:background="@mipmap/events_background">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_weight="1"
+                android:background="@mipmap/events_background">
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:text="login"
-            android:textColor="#FFFFFF"
-            android:textSize="45sp"
-            android:textStyle="bold"
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="login"
+                    android:textColor="#000000"
+                    android:textSize="45sp"
+                    android:textStyle="bold"
 
-            />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_weight="1"
-        android:background="@mipmap/events_background">
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@mipmap/events_background">
 
-        <Button
-            android:id="@+id/signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:text="signup"
-            android:textColor="#FFFFFF"
-            android:textSize="45sp"
-            android:textStyle="bold"
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="signup"
+                    android:textColor="#000000"
+                    android:textSize="45sp"
+                    android:textStyle="bold"
 
-            />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_weight="1"
-        android:background="@mipmap/events_background">
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="@mipmap/events_background">
 
-        <Button
-            android:id="@+id/forgotpassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:text="forgot password"
-            android:textColor="#FFFFFF"
-            android:textSize="45sp"
-            android:textStyle="bold"
+                <Button
+                    android:id="@+id/forgotpassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="forgot password"
+                    android:textColor="#000000"
+                    android:textSize="45sp"
+                    android:textStyle="bold"
 
-            />
-    </RelativeLayout>
+                    />
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

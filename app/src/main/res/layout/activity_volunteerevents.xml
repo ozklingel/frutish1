@@ -35,7 +35,7 @@
             android:layout_weight="1"
             android:id="@+id/filter"
             style="@style/spinner_style">
-    </Spinner>
+        </Spinner>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"

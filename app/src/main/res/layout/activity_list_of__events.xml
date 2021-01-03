@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="loc"
+            android:hint="Type"
             android:layout_marginTop="50sp"
 
 
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="type"
+            android:hint="Location"
             android:layout_marginTop="100sp"
 
             />
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="price"
+            android:hint="Price"
             android:layout_marginTop="150sp"
 
             />
@@ -70,7 +70,7 @@
             android:background="@android:color/transparent"
             android:gravity="center"
             android:text="פרסם עץ"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="45sp"
             android:textStyle="bold"
 

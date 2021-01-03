@@ -87,7 +87,7 @@
             android:layout_centerHorizontal="true"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:text="submit as sailer"
+            android:text="submit as seller"
             android:textColor="@color/black"
             android:textSize="45sp"
             android:textStyle="bold"
