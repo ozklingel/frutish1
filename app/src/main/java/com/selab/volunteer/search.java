@@ -69,8 +69,8 @@ public class search extends AppCompatActivity {
                 eventl = location.getText().toString().trim();
                 eventt = type.getText().toString().trim();
                 eventp = price.getText().toString().trim();
-                 String[] array1 = new  String[3];
-               // array1[0]=eventl;
+                String[] array1 = new  String[3];
+                // array1[0]=eventl;
                 //array1[1]=eventt;
                 //array1[2]=eventp;
 
@@ -84,13 +84,16 @@ public class search extends AppCompatActivity {
 
                         for( DataSnapshot tree : dataSnapshot.getChildren())
                         {
+                            int p = tree.child("price").getValue(Integer.class);
+                            String pvalue = String.valueOf(p);
 
-                            if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt)&&tree.child("location").getValue(String.class).equalsIgnoreCase(eventl)) {
+                            if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt)&&tree.child("location").getValue(String.class).equalsIgnoreCase(eventl)&& p<=Integer.parseInt(eventp)) {
                                 //array1[0] = tree.child("type").getValue(String.class);
                                 //array1[1] = tree.child("location").getValue(String.class);
                                 //array1[2] = tree.child("location").getValue(String.class);
                                 //array1[0]= array1[0]+ array1[1]+ array1[2];
-                                array1.add("type:"+tree.child("type").getValue(String.class)+"/nlocation:"+tree.child("location").getValue(String.class)+"");
+
+                                array1.add("Type:  "+tree.child("type").getValue(String.class)+"           Location:  "+tree.child("location").getValue(String.class)+"           price:  "+pvalue);
 
                             }
                         }
@@ -109,8 +112,6 @@ public class search extends AppCompatActivity {
 
 
                 });
-
-//curently by type only
 
             }});
 

@@ -51,7 +51,7 @@ public class offer extends AppCompatActivity {
         price=findViewById(R.id.price);
 
 
-       // eventph = phone.getText().toString().trim();
+        // eventph = phone.getText().toString().trim();
         eventph="s";
         final Button submit=(Button)findViewById(R.id.submit) ;
 
@@ -62,7 +62,7 @@ public class offer extends AppCompatActivity {
                 eventl = location.getText().toString().trim();
                 eventt = type.getText().toString().trim();
                 eventp = Integer.parseInt(price.getText().toString());
-                        final EventOneSchema eventOneSchema = new EventOneSchema(eventl, eventt, eventp, eventph);
+                final EventOneSchema eventOneSchema = new EventOneSchema(eventl, eventt, eventp, eventph);
 
 
                 databaseEvents = FirebaseDatabase.getInstance().getReference().child("trees");

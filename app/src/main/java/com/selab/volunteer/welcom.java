@@ -44,7 +44,7 @@ public class welcom extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent1;
 
-                    intent1=new Intent(com.selab.volunteer.welcom.this, login_sailer.class);
+                    intent1=new Intent(com.selab.volunteer.welcom.this, login_seller.class);
                     startActivity(intent1);
                 }
             });

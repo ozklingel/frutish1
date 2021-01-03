@@ -65,7 +65,7 @@ public class EventList1 extends Activity {
                 Intent i = new Intent(EventList1.this, MainActivitybuyer.class);
                 startActivity(i);
 
-        }
+            }
         });
 
     }
