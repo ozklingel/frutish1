@@ -115,7 +115,13 @@
             android:windowSoftInputMode="adjustPan"
             tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".login_sailer"
+            android:name=".login_seller"
+            android:noHistory="true"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".odot"
             android:noHistory="true"
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustPan"
