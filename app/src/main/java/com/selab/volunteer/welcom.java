@@ -27,6 +27,7 @@ public class welcom extends AppCompatActivity {
 
             final Button signupbuyer =(Button)findViewById(R.id.submitb);
             final Button signupsailer =(Button)findViewById(R.id.submits);
+            final Button odot =(Button)findViewById(R.id.submito);
 
             // set load icon
 
@@ -35,7 +36,7 @@ public class welcom extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent1;
 
-                    intent1=new Intent(com.selab.volunteer.welcom.this, Login.class);
+                    intent1=new Intent(com.selab.volunteer.welcom.this,Login.class);
                     startActivity(intent1);
                 }
             });
@@ -45,6 +46,15 @@ public class welcom extends AppCompatActivity {
                     Intent intent1;
 
                     intent1=new Intent(com.selab.volunteer.welcom.this, login_seller.class);
+                    startActivity(intent1);
+                }
+            });
+            odot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1;
+
+                    intent1=new Intent(com.selab.volunteer.welcom.this, odot.class);
                     startActivity(intent1);
                 }
             });

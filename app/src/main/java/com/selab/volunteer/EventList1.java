@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class EventList1 extends Activity {
 
     ListView listView ;
@@ -50,10 +53,12 @@ public class EventList1 extends Activity {
 
                 // ListView Clicked item value
                 String  itemValue    = (String) listView.getItemAtPosition(position);
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                FirebaseUser currentUser = mAuth.getCurrentUser();
 
                 // Show Alert
                 Toast.makeText(getApplicationContext(),
-                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
+                        "email for contact:"+itemValue+currentUser.getEmail() , Toast.LENGTH_LONG)
                         .show();
 
             }

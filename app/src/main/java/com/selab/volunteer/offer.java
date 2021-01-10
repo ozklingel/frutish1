@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.common.SignInButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -45,6 +46,8 @@ public class offer extends AppCompatActivity {
         setContentView(R.layout.activity_list_of__events);
 
         //offer.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         location=findViewById(R.id.location);
         type=findViewById(R.id.type);
@@ -52,7 +55,7 @@ public class offer extends AppCompatActivity {
 
 
         // eventph = phone.getText().toString().trim();
-        eventph="s";
+        eventph="";
         final Button submit=(Button)findViewById(R.id.submit) ;
 
 
@@ -62,6 +65,8 @@ public class offer extends AppCompatActivity {
                 eventl = location.getText().toString().trim();
                 eventt = type.getText().toString().trim();
                 eventp = Integer.parseInt(price.getText().toString());
+                eventph=mAuth.getCurrentUser().getEmail();
+
                 final EventOneSchema eventOneSchema = new EventOneSchema(eventl, eventt, eventp, eventph);
 
 

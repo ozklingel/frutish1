@@ -8,7 +8,7 @@ public class EventOneSchema {
     public String location;
 
     public int price;
-    public String eventph;
+    public String eventemail;
   //  public ArrayList<String> ApprovedId = new ArrayList<>();
   //  public ArrayList<String> UnApprovedId = new ArrayList<>();
 
@@ -18,7 +18,7 @@ public class EventOneSchema {
         this.type = name;
         this.price = price;
         this.location = location;
-        this.eventph=eventph;
+        this.eventemail=eventph;
 
     }
 
