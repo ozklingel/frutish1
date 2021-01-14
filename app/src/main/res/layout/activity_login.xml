@@ -20,7 +20,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="308dp"
+                android:layout_height="208dp"
                 android:layout_weight="1"
                 android:background="@mipmap/hosted_events_background">
 
@@ -44,14 +44,14 @@
                     android:layout_marginTop="110sp"
                     android:ems="10"
                     android:hint="typasswordpe"
-
+                    android:inputType="textPassword"
                     />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="320dp"
+                android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@mipmap/events_background">
 
@@ -61,12 +61,12 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:text="login"
                     android:textColor="#000000"
                     android:textSize="45sp"
                     android:textStyle="bold"
+                    android:background="@drawable/round_button"
 
                     />
             </RelativeLayout>
@@ -82,12 +82,12 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:text="signup"
                     android:textColor="#000000"
                     android:textSize="45sp"
                     android:textStyle="bold"
+                    android:background="@drawable/round_button"
 
                     />
             </RelativeLayout>
@@ -103,12 +103,12 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:text="forgot password"
                     android:textColor="#000000"
                     android:textSize="45sp"
                     android:textStyle="bold"
+                    android:background="@drawable/round_button"
 
                     />
             </RelativeLayout>
