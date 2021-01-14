@@ -49,7 +49,10 @@ public class search extends AppCompatActivity {
         search.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
 
-
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        setTitle("search");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         location=findViewById(R.id.location);
@@ -70,10 +73,275 @@ public class search extends AppCompatActivity {
                 eventt = type.getText().toString().trim();
                 eventp = price.getText().toString().trim();
                 String[] array1 = new  String[3];
-                // array1[0]=eventl;
-                //array1[1]=eventt;
-                //array1[2]=eventp;
 
+
+                /////////////////////////////////
+                if(eventt.isEmpty()&&eventp.isEmpty()&&eventl.isEmpty()) {
+
+                    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+                    tempdata2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            List<String> array1 = new ArrayList<String>();
+
+
+                            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                                int p = tree.child("price").getValue(Integer.class);
+                                String pvalue = String.valueOf(p);
+
+                                    //array1[0] = tree.child("type").getValue(String.class);
+                                    //array1[1] = tree.child("location").getValue(String.class);
+                                    //array1[2] = tree.child("location").getValue(String.class);
+                                    //array1[0]= array1[0]+ array1[1]+ array1[2];
+
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+
+
+                            }
+                            String[] stockArr = new String[array1.size()];
+                            Intent i = new Intent(search.this, EventList1.class);
+                            i.putExtra("key", array1.toArray(stockArr));
+                            startActivity(i);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+                }
+                /////////////////////////////////////////////////
+
+                if(eventt.isEmpty()&&eventp.isEmpty()) {
+
+                    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+                    tempdata2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            List<String> array1 = new ArrayList<String>();
+
+
+                            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                                int p = tree.child("price").getValue(Integer.class);
+                                String pvalue = String.valueOf(p);
+
+                                if (tree.child("location").getValue(String.class).equalsIgnoreCase(eventl) ) {
+                                    //array1[0] = tree.child("type").getValue(String.class);
+                                    //array1[1] = tree.child("location").getValue(String.class);
+                                    //array1[2] = tree.child("location").getValue(String.class);
+                                    //array1[0]= array1[0]+ array1[1]+ array1[2];
+
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+
+                                }
+                            }
+                            String[] stockArr = new String[array1.size()];
+                            Intent i = new Intent(search.this, EventList1.class);
+                            i.putExtra("key", array1.toArray(stockArr));
+                            startActivity(i);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+                }
+                ///////////////////////////////////////////
+                if(eventl.isEmpty()&&eventp.isEmpty()) {
+
+                    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+                    tempdata2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            List<String> array1 = new ArrayList<String>();
+
+
+                            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                                int p = tree.child("price").getValue(Integer.class);
+                                String pvalue = String.valueOf(p);
+
+                                if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt) ) {
+                                    //array1[0] = tree.child("type").getValue(String.class);
+                                    //array1[1] = tree.child("location").getValue(String.class);
+                                    //array1[2] = tree.child("location").getValue(String.class);
+                                    //array1[0]= array1[0]+ array1[1]+ array1[2];
+
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+
+                                }
+                            }
+                            String[] stockArr = new String[array1.size()];
+                            Intent i = new Intent(search.this, EventList1.class);
+                            i.putExtra("key", array1.toArray(stockArr));
+                            startActivity(i);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+                }
+                ////////////////////////////////////////////////
+                ///////////////////////////////////////////
+                if(eventl.isEmpty()&&eventt.isEmpty()) {
+
+                    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+                    tempdata2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            List<String> array1 = new ArrayList<String>();
+
+
+                            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                                int p = tree.child("price").getValue(Integer.class);
+                                String pvalue = String.valueOf(p);
+
+                                if (p <= Integer.parseInt(eventp) ) {
+                                    //array1[0] = tree.child("type").getValue(String.class);
+                                    //array1[1] = tree.child("location").getValue(String.class);
+                                    //array1[2] = tree.child("location").getValue(String.class);
+                                    //array1[0]= array1[0]+ array1[1]+ array1[2];
+
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+
+                                }
+                            }
+                            String[] stockArr = new String[array1.size()];
+                            Intent i = new Intent(search.this, EventList1.class);
+                            i.putExtra("key", array1.toArray(stockArr));
+                            startActivity(i);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+                }
+    ////////////////////////////////////////////////////
+if(eventl.isEmpty()) {
+
+    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+    tempdata2.addValueEventListener(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            List<String> array1 = new ArrayList<String>();
+
+
+            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                int p = tree.child("price").getValue(Integer.class);
+                String pvalue = String.valueOf(p);
+
+                if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt)  && p <= Integer.parseInt(eventp)) {
+                    //array1[0] = tree.child("type").getValue(String.class);
+                    //array1[1] = tree.child("location").getValue(String.class);
+                    //array1[2] = tree.child("location").getValue(String.class);
+                    //array1[0]= array1[0]+ array1[1]+ array1[2];
+
+                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+
+                }
+            }
+            String[] stockArr = new String[array1.size()];
+            Intent i = new Intent(search.this, EventList1.class);
+            i.putExtra("key", array1.toArray(stockArr));
+            startActivity(i);
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+
+
+    });
+}
+/////////////////////////////////////////////////
+                if(eventt.isEmpty()) {
+
+                    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+                    tempdata2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            List<String> array1 = new ArrayList<String>();
+
+
+                            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                                int p = tree.child("price").getValue(Integer.class);
+                                String pvalue = String.valueOf(p);
+
+                                if ( tree.child("location").getValue(String.class).equalsIgnoreCase(eventl) && p <= Integer.parseInt(eventp)) {
+                                    //array1[0] = tree.child("type").getValue(String.class);
+                                    //array1[1] = tree.child("location").getValue(String.class);
+                                    //array1[2] = tree.child("location").getValue(String.class);
+                                    //array1[0]= array1[0]+ array1[1]+ array1[2];
+
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+
+                                }
+                            }
+                            String[] stockArr = new String[array1.size()];
+                            Intent i = new Intent(search.this, EventList1.class);
+                            i.putExtra("key", array1.toArray(stockArr));
+                            startActivity(i);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+                }
+//////////////////////////////////////////////
+                if(eventp.isEmpty()) {
+
+                    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+                    tempdata2.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            List<String> array1 = new ArrayList<String>();
+
+
+                            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                                int p = tree.child("price").getValue(Integer.class);
+                                String pvalue = String.valueOf(p);
+
+                                if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt) && tree.child("location").getValue(String.class).equalsIgnoreCase(eventl) ) {
+                                    //array1[0] = tree.child("type").getValue(String.class);
+                                    //array1[1] = tree.child("location").getValue(String.class);
+                                    //array1[2] = tree.child("location").getValue(String.class);
+                                    //array1[0]= array1[0]+ array1[1]+ array1[2];
+
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+
+                                }
+                            }
+                            String[] stockArr = new String[array1.size()];
+                            Intent i = new Intent(search.this, EventList1.class);
+                            i.putExtra("key", array1.toArray(stockArr));
+                            startActivity(i);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+                }
 
                 DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
                 tempdata2.addValueEventListener(new ValueEventListener() {
@@ -82,18 +350,17 @@ public class search extends AppCompatActivity {
                         List<String> array1 = new ArrayList<String>();
 
 
-                        for( DataSnapshot tree : dataSnapshot.getChildren())
-                        {
+                        for (DataSnapshot tree : dataSnapshot.getChildren()) {
                             int p = tree.child("price").getValue(Integer.class);
                             String pvalue = String.valueOf(p);
 
-                            if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt)&&tree.child("location").getValue(String.class).equalsIgnoreCase(eventl)&& p<=Integer.parseInt(eventp)) {
+                            if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt) && tree.child("location").getValue(String.class).equalsIgnoreCase(eventl)&& p <= Integer.parseInt(eventp) ) {
                                 //array1[0] = tree.child("type").getValue(String.class);
                                 //array1[1] = tree.child("location").getValue(String.class);
                                 //array1[2] = tree.child("location").getValue(String.class);
                                 //array1[0]= array1[0]+ array1[1]+ array1[2];
 
-                                array1.add("Type:  "+tree.child("type").getValue(String.class)+"           Location:  "+tree.child("location").getValue(String.class)+"           price:  "+pvalue);
+                                array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue + "   email:"+tree.child("eventemail").getValue(String.class));
 
                             }
                         }
@@ -107,8 +374,6 @@ public class search extends AppCompatActivity {
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
-
-
 
 
                 });

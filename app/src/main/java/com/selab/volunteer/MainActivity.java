@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle("menu");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

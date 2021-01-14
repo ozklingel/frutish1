@@ -7,7 +7,12 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,6 +21,7 @@ public class ForgotPassword extends AppCompatActivity {
 
     Intent Newpage;
     private int flag=0;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +29,8 @@ public class ForgotPassword extends AppCompatActivity {
         final ProgressBar progressBar = findViewById(R.id.forgotpassword_bar);
         progressBar.setVisibility(View.INVISIBLE);
 
-        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        setTitle("Forgot Password");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mAuth = FirebaseAuth.getInstance();
         Button forgot =(Button)findViewById(R.id.reset);
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,28 +46,27 @@ public class ForgotPassword extends AppCompatActivity {
 
                 if (matcher.matches()) {
                     progressBar.setVisibility(View.VISIBLE);
-                    //mAuth.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                      //  @Override
+                    mAuth.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
 
-                      //  public void onComplete(@NonNull Task<Void> task) {
-                        //    TextView print = findViewById(R.id.print);
-                          //  if(task.isSuccessful()) {
-                            //    print.setText("A link has been sent to the given email id.");
-                              //  progressBar.setVisibility(View.INVISIBLE);
-                            //}
-                            //else {
-                              //  print.setText("Error!!\nPlease check the email address");
-                                //progressBar.setVisibility(View.INVISIBLE);
-                            //}
-                        //}
-                    //});
+                        public void onComplete(@NonNull Task<Void> task) {
+                            TextView print = findViewById(R.id.print);
+                            if(task.isSuccessful()) {
+                                print.setText("A link has been sent to the given email id.");
+                                progressBar.setVisibility(View.INVISIBLE);
+                            }
+                            else {
+                                print.setText("Error!!\nPlease check the email address");
+                                progressBar.setVisibility(View.INVISIBLE);
+                            }
+                        }
+                    });
 
                 }
                 else {
                     email.setError("Enter a valid email id!!");
                     flag = 1;
                 }
-
                 //progressBar.setVisibility(View.INVISIBLE);
             }
         });
