@@ -7,6 +7,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -93,8 +94,9 @@ public class search extends AppCompatActivity {
                                     //array1[1] = tree.child("location").getValue(String.class);
                                     //array1[2] = tree.child("location").getValue(String.class);
                                     //array1[0]= array1[0]+ array1[1]+ array1[2];
+                                Toast.makeText(getApplicationContext(), tree.child("type").getValue(String.class), Toast.LENGTH_LONG).show();
 
-                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue+ "   email:"+tree.child("eventemail").getValue(String.class));
 
 
                             }
@@ -113,11 +115,10 @@ public class search extends AppCompatActivity {
                     });
                 }
                 /////////////////////////////////////////////////
-
-                if(eventt.isEmpty()&&eventp.isEmpty()) {
+                if(eventt.isEmpty()&&eventp.isEmpty()&&!eventl.isEmpty()) {
 
                     DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-                    tempdata2.addValueEventListener(new ValueEventListener() {
+                    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             List<String> array1 = new ArrayList<String>();
@@ -132,8 +133,9 @@ public class search extends AppCompatActivity {
                                     //array1[1] = tree.child("location").getValue(String.class);
                                     //array1[2] = tree.child("location").getValue(String.class);
                                     //array1[0]= array1[0]+ array1[1]+ array1[2];
+                                    Toast.makeText(getApplicationContext(), tree.child("location").getValue(String.class), Toast.LENGTH_LONG).show();
 
-                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue+ "   email:"+tree.child("eventemail").getValue(String.class));
 
                                 }
                             }
@@ -152,10 +154,10 @@ public class search extends AppCompatActivity {
                     });
                 }
                 ///////////////////////////////////////////
-                if(eventl.isEmpty()&&eventp.isEmpty()) {
+                if(eventl.isEmpty()&&eventp.isEmpty()&&!eventt.isEmpty()) {
 
                     DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-                    tempdata2.addValueEventListener(new ValueEventListener() {
+                    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             List<String> array1 = new ArrayList<String>();
@@ -171,7 +173,7 @@ public class search extends AppCompatActivity {
                                     //array1[2] = tree.child("location").getValue(String.class);
                                     //array1[0]= array1[0]+ array1[1]+ array1[2];
 
-                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue+ "   email:"+tree.child("eventemail").getValue(String.class));
 
                                 }
                             }
@@ -191,10 +193,10 @@ public class search extends AppCompatActivity {
                 }
                 ////////////////////////////////////////////////
                 ///////////////////////////////////////////
-                if(eventl.isEmpty()&&eventt.isEmpty()) {
+                if(eventl.isEmpty()&&eventt.isEmpty()&&!eventp.isEmpty()) {
 
                     DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-                    tempdata2.addValueEventListener(new ValueEventListener() {
+                    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             List<String> array1 = new ArrayList<String>();
@@ -210,7 +212,7 @@ public class search extends AppCompatActivity {
                                     //array1[2] = tree.child("location").getValue(String.class);
                                     //array1[0]= array1[0]+ array1[1]+ array1[2];
 
-                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue+ "   email:"+tree.child("eventemail").getValue(String.class));
 
                                 }
                             }
@@ -229,10 +231,10 @@ public class search extends AppCompatActivity {
                     });
                 }
     ////////////////////////////////////////////////////
-if(eventl.isEmpty()) {
+if(eventl.isEmpty()&&!eventt.isEmpty()&&!eventp.isEmpty()) {
 
     DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-    tempdata2.addValueEventListener(new ValueEventListener() {
+    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             List<String> array1 = new ArrayList<String>();
@@ -248,7 +250,7 @@ if(eventl.isEmpty()) {
                     //array1[2] = tree.child("location").getValue(String.class);
                     //array1[0]= array1[0]+ array1[1]+ array1[2];
 
-                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue+ "   email:"+tree.child("eventemail").getValue(String.class));
 
                 }
             }
@@ -267,10 +269,10 @@ if(eventl.isEmpty()) {
     });
 }
 /////////////////////////////////////////////////
-                if(eventt.isEmpty()) {
+                if(eventt.isEmpty()&&!eventp.isEmpty()&&!eventl.isEmpty()) {
 
                     DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-                    tempdata2.addValueEventListener(new ValueEventListener() {
+                    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             List<String> array1 = new ArrayList<String>();
@@ -286,7 +288,7 @@ if(eventl.isEmpty()) {
                                     //array1[2] = tree.child("location").getValue(String.class);
                                     //array1[0]= array1[0]+ array1[1]+ array1[2];
 
-                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue+ "   email:"+tree.child("eventemail").getValue(String.class));
 
                                 }
                             }
@@ -305,10 +307,10 @@ if(eventl.isEmpty()) {
                     });
                 }
 //////////////////////////////////////////////
-                if(eventp.isEmpty()) {
+                if(eventp.isEmpty()&&!eventl.isEmpty()&&!eventt.isEmpty()) {
 
                     DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-                    tempdata2.addValueEventListener(new ValueEventListener() {
+                    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             List<String> array1 = new ArrayList<String>();
@@ -324,7 +326,7 @@ if(eventl.isEmpty()) {
                                     //array1[2] = tree.child("location").getValue(String.class);
                                     //array1[0]= array1[0]+ array1[1]+ array1[2];
 
-                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue);
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue+ "   email:"+tree.child("eventemail").getValue(String.class));
 
                                 }
                             }
@@ -342,42 +344,43 @@ if(eventl.isEmpty()) {
 
                     });
                 }
+                if(!eventp.isEmpty()&&!eventl.isEmpty()&&!eventt.isEmpty()) {
 
-                DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-                tempdata2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        List<String> array1 = new ArrayList<String>();
+                    DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
+                    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            List<String> array1 = new ArrayList<String>();
 
 
-                        for (DataSnapshot tree : dataSnapshot.getChildren()) {
-                            int p = tree.child("price").getValue(Integer.class);
-                            String pvalue = String.valueOf(p);
+                            for (DataSnapshot tree : dataSnapshot.getChildren()) {
+                                int p = tree.child("price").getValue(Integer.class);
+                                String pvalue = String.valueOf(p);
 
-                            if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt) && tree.child("location").getValue(String.class).equalsIgnoreCase(eventl)&& p <= Integer.parseInt(eventp) ) {
-                                //array1[0] = tree.child("type").getValue(String.class);
-                                //array1[1] = tree.child("location").getValue(String.class);
-                                //array1[2] = tree.child("location").getValue(String.class);
-                                //array1[0]= array1[0]+ array1[1]+ array1[2];
+                                if (tree.child("type").getValue(String.class).equalsIgnoreCase(eventt) && tree.child("location").getValue(String.class).equalsIgnoreCase(eventl) && p <= Integer.parseInt(eventp)) {
+                                    //array1[0] = tree.child("type").getValue(String.class);
+                                    //array1[1] = tree.child("location").getValue(String.class);
+                                    //array1[2] = tree.child("location").getValue(String.class);
+                                    //array1[0]= array1[0]+ array1[1]+ array1[2];
 
-                                array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue + "   email:"+tree.child("eventemail").getValue(String.class));
+                                    array1.add("Type:  " + tree.child("type").getValue(String.class) + "           Location:  " + tree.child("location").getValue(String.class) + "           price:  " + pvalue + "   email:" + tree.child("eventemail").getValue(String.class));
 
+                                }
                             }
+                            String[] stockArr = new String[array1.size()];
+                            Intent i = new Intent(search.this, EventList1.class);
+                            i.putExtra("key", array1.toArray(stockArr));
+                            startActivity(i);
                         }
-                        String[] stockArr = new String[array1.size()];
-                        Intent i = new Intent(search.this, EventList1.class);
-                        i.putExtra("key", array1.toArray(stockArr));
-                        startActivity(i);
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
+                        }
 
 
-                });
-
+                    });
+                }
             }});
 
 
