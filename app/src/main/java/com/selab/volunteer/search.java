@@ -79,7 +79,7 @@ public class search extends AppCompatActivity {
                 if(eventt.isEmpty()&&eventp.isEmpty()&&eventl.isEmpty()) {
 
                     DatabaseReference tempdata2 = FirebaseDatabase.getInstance().getReference().child("trees");
-                    tempdata2.addValueEventListener(new ValueEventListener() {
+                    tempdata2.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             List<String> array1 = new ArrayList<String>();
